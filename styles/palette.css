@@ -1,0 +1,41 @@
+:root {
+  --font-family: var(--f-pretendard), -apple-system, BlinkMacSystemFont,
+    Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
+    Helvetica Neue, sans-serif;
+
+  --c-black: 0, 0, 0;
+  --c-white: 255, 255, 255;
+  --c-light-gray: 240, 240, 240;
+  --c-gray: 230, 230, 230;
+  --c-dark-gray: 210, 210, 210;
+  --c-darker-gray: 139, 139, 139;
+  --c-red: 255, 71, 71;
+  --c-blue: 47, 113, 255;
+  --c-orange: 255, 183, 48;
+
+  --c-inventory-hover-background-color: rgba(255, 255, 255, 0.5);
+
+  --background-color: var(--c-white);
+  --text-color: var(--c-black);
+
+  --input-border-radius: 5px;
+  --input-outline-width: 3px;
+  --hover-animation-duration: 0.3s;
+  --fixed-width: 550px;
+
+  --z-alerts: 15;
+  --z-search-result: 5;
+  --z-navbar: 10;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --c-black: 255, 255, 255;
+    --c-white: 0, 0, 0;
+    --c-light-gray: 40, 40, 40;
+    --c-gray: 50, 50, 50;
+    --c-dark-gray: 60, 60, 60;
+    --c-darker-gray: 80, 80, 80;
+    --c-blue: 118, 175, 255;
+  }
+}
