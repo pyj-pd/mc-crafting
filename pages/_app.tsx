@@ -5,10 +5,6 @@ import { SpinnerContextProvider } from 'contexts/SpinnerContext'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 
-const pretendard = localFont({
-  src: '../assets/font/PretendardVariable.woff2',
-})
-
 const minecraft = localFont({
   src: [
     {
@@ -35,7 +31,6 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
           global
         >{`
           :root {
-            --f-pretendard: ${pretendard.style.fontFamily};
             --f-minecraft: ${minecraft.style.fontFamily};
           }
         `}</style>
