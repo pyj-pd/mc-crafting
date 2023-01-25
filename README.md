@@ -26,3 +26,8 @@ Extract the `.jar` file that is inside the folder that is named the version you'
 
 After you extracted the `.jar` file, open the extracted folder. Find `data` folder inside it.
 You will find two folders: `data/recipes` and `data/tags`. Copy these into the project folder. The directory is `data`. Program will do anything else for you then.
+
+## To-do
+
+- [ ] Add testing
+- [ ] Add more decorations
