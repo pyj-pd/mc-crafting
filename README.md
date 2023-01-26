@@ -31,3 +31,5 @@ You will find two folders: `data/recipes` and `data/tags`. Copy these into the p
 
 - [ ] Add testing
 - [ ] Add more decorations
+- [ ] Add favicon
+- [ ] Add open graph data
