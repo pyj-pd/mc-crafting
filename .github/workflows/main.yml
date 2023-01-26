@@ -1,38 +1,24 @@
-name: deploy site
+name: Test Code
 
 on: [pull_request]
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    
-    steps:
-    - uses: actions/checkout@master
-    - name: Install Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: 18
 
-    - name: Install pnpm
-      uses: pnpm/action-setup@v2
-      with:
-        version: 7
-
-    - name: Install dependencies, build site, and test
-      run: |
-        pnpm install
-        pnpm run build
-        pnpm run test:ci
-        
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    
     steps:
-        - name: Deploy to Vercel
-          uses: amondnet/vercel-action@v20 #deploy
-          with:
-            vercel-token: ${{ secrets.VERCEL_TOKEN }}
-            vercel-org-id: ${{ secrets.ORG_ID}}
-            vercel-project-id: ${{ secrets.PROJECT_ID}}
-            working-directory: ./
+      - uses: actions/checkout@master
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 7
+
+      - name: Install dependencies and test
+        run: |
+          pnpm install
+          pnpm run test:ci
