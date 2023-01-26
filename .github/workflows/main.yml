@@ -29,9 +29,10 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-        - uses: amondnet/vercel-action@v20 #deploy
+        - name: Deploy to Vercel
+          uses: amondnet/vercel-action@v20 #deploy
           with:
             vercel-token: ${{ secrets.VERCEL_TOKEN }}
             vercel-org-id: ${{ secrets.ORG_ID}}
             vercel-project-id: ${{ secrets.PROJECT_ID}}
-            working-directory: ./sub-directory
+            working-directory: ./
