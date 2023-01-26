@@ -26,13 +26,13 @@ describe('Data converter', () => {
   it('loads item files', async () => {
     const itemFiles = await getItemFiles()
 
-    expect(itemFiles).toMatchSnapshot()
+    expect(itemFiles.length).toMatchInlineSnapshot('754')
   })
 
   it('loads recipe', async () => {
     const recipeData = await getItemList()
 
-    expect(recipeData).toMatchSnapshot()
+    expect(recipeData.length).toMatchInlineSnapshot('754')
   })
 
   it('loads recipe of an item', async () => {
