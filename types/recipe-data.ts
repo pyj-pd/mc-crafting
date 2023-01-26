@@ -1,3 +1,8 @@
+export interface RecipeDataQuery {
+  file?: string
+  id?: string
+}
+
 interface RecipeCommonData {
   type: string
   category?: string
