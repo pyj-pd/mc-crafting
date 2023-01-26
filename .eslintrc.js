@@ -15,12 +15,10 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
-    project: ['./tsconfig.json'],
   },
-  plugins: ['react', '@typescript-eslint', 'prettier', 'deprecation'],
+  plugins: ['react', '@typescript-eslint', 'prettier'],
   rules: {
     semi: ['error', 'never'],
     '@typescript-eslint/no-unused-vars': 'warn',
-    'deprecation/deprecation': 'error',
   },
 }

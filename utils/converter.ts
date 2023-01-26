@@ -5,6 +5,7 @@ import {
   ItemNamePair,
   RawRecipeData,
   RawTag,
+  RecipeDataQuery,
   TagData,
 } from 'types/recipe-data'
 import { minecraftPrefix } from 'value/minecraft'
@@ -13,7 +14,7 @@ import { getTranslation } from './language'
 import { DEFAULT_LANGUAGE_CODE } from 'value/language'
 import { craftingShapedId, craftingShapelessId } from 'value/recipe-data'
 import hangul from 'hangul-js'
-import Inko from 'inko'
+import { hangulToEnglish } from './hangul'
 
 /**
  * Disassemble Korean characters and make it one string
@@ -23,14 +24,12 @@ import Inko from 'inko'
 export const disassembleHangul = (text: string): string =>
   hangul.d(text).join('')
 
-const inko = new Inko()
-
 /**
  * Convert Korean characters into English
  * @param text Text to convert
  * @returns Converted text
  */
-export const koreanToEnglish = (text: string): string => inko.ko2en(text)
+export const koreanToEnglish = (text: string): string => hangulToEnglish(text)
 
 /**
  * Convert text to work well with searching
@@ -145,13 +144,7 @@ const itemList = await getItemList()
  * @param id Item ID
  * @returns Crafting recipe of that item
  */
-export const getRecipeData = async ({
-  file,
-  id,
-}: {
-  file?: string
-  id?: string
-}) => {
+export const getRecipeData = async ({ file, id }: RecipeDataQuery) => {
   const item = itemFiles.find((item) =>
     file ? item.file === file : item.id === id
   )
