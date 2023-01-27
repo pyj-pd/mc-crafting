@@ -2,12 +2,12 @@ import { useContext, useEffect } from 'react'
 import { Container, LoadingContainer } from './styles'
 import List from './List'
 import { SearchContext } from 'contexts/SearchContext'
-import { SearchApiResponse } from '@/pages/api/search'
 import fetcher from 'utils/fetcher'
 import useSWR from 'swr'
 import { useAlerts } from 'contexts/AlertsContext'
 import { errorAlert } from 'value/messages'
 import Loading from '@/components/Loading'
+import { SearchApiResponse } from 'utils/api/search'
 
 interface SearchResultProps {
   hidden?: boolean
