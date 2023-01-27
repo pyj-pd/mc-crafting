@@ -5,16 +5,11 @@ import { useRouter } from 'next/router'
 
 const SelectLanguage = () => {
   const router = useRouter()
-  const {
-    searchQuery: { setState },
-    languages,
-    language,
-  } = useContext(SearchContext)
+  const { languages, language } = useContext(SearchContext)
 
   const changeLanguage = (e: ChangeEvent<HTMLSelectElement>) => {
     const lang = e.target.value
 
-    setState('')
     router.push('/', undefined, {
       shallow: false,
       locale: lang,

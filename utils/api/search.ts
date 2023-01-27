@@ -27,6 +27,7 @@ export const runSearchApi: ApiFunction<
     return {
       data: null,
       errorMessage: apiResponse.invalidParameter,
+      statusCode: 400,
     }
 
   const itemNames = await getItemList(lang, true).catch(() => null)
@@ -35,6 +36,7 @@ export const runSearchApi: ApiFunction<
     return {
       data: null,
       errorMessage: apiResponse.invalidLanguage,
+      statusCode: 400,
     }
 
   const fuse = new Fuse(itemNames, { keys: ['id', 'searchName'] })

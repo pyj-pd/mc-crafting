@@ -1,4 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next'
+import { DEFAULT_STATUS_CODE } from 'types/api'
 import {
   SearchApiArgs,
   SearchApiResponse,
@@ -11,9 +12,12 @@ const handler = async (
 ) => {
   const { query, lang } = req.query as SearchApiArgs
 
-  const response = await runSearchApi({ query, lang })
+  const { statusCode = DEFAULT_STATUS_CODE, ...response } = await runSearchApi({
+    query,
+    lang,
+  })
 
-  res.json(response)
+  res.status(statusCode).json(response)
 }
 
 export default handler

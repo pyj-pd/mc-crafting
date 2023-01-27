@@ -1,22 +1,9 @@
 import Layout from '@/components/Layout'
 import '@/styles/global.css'
-import localFont from '@next/font/local'
 import { SpinnerContextProvider } from 'contexts/SpinnerContext'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
-
-const minecraft = localFont({
-  src: [
-    {
-      path: '../assets/font/Minecraft.otf',
-      weight: 'normal',
-    },
-    {
-      path: '../assets/font/Minecraft-Bold.otf',
-      weight: 'bold',
-    },
-  ],
-})
+import { metadata } from 'value/metadata'
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
@@ -24,16 +11,20 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
       <SpinnerContextProvider>
         <Head>
           <title>Minecraft Crafting Recipe</title>
+          <meta
+            name="description"
+            content={metadata.description}
+          />
+          <meta
+            property="og:title"
+            content={metadata['og:title']}
+          />
+          <meta
+            property="og:description"
+            content={metadata['og:description']}
+          />
         </Head>
         <Component {...pageProps} />
-        <style
-          jsx
-          global
-        >{`
-          :root {
-            --f-minecraft: ${minecraft.style.fontFamily};
-          }
-        `}</style>
       </SpinnerContextProvider>
     </Layout>
   )

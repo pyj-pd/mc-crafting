@@ -42,16 +42,20 @@ const Home = ({ languages, currentLang }: HomeProps) => {
   const router = useRouter()
 
   // Get item ID or file name from path hash
+  // or get search query from search query
   useEffect(() => {
     const id = window.location.hash.slice(1) || null
+    const query = router.query.q
 
-    if (id?.endsWith('.json'))
+    if (typeof query === 'string' && query.trim().length > 0)
+      setSearchQuery(query)
+    else if (id?.endsWith('.json'))
       setSelectedId({
         file: id,
         id: null,
       })
     else setSelectedId({ file: null, id })
-  }, [router.asPath])
+  }, [router])
 
   const dataState: DataState = useMemo(
     () =>
@@ -80,6 +84,8 @@ const Home = ({ languages, currentLang }: HomeProps) => {
       loading: true,
     }))
 
+    let toMerge: Partial<CurrentData> = {}
+
     axios
       .get<InfoApiResponse>('/api/info', {
         params: {
@@ -88,9 +94,18 @@ const Home = ({ languages, currentLang }: HomeProps) => {
         },
         signal,
       })
-      .then((res) => setCurrentData((state) => ({ ...state, data: res.data })))
-      .catch((error) => setCurrentData((state) => ({ ...state, error })))
-      .finally(() => setCurrentData((state) => ({ ...state, loading: false })))
+      .then(({ data }) => {
+        if (data.errorMessage !== null) throw new Error()
+        toMerge = { data, error: null }
+      })
+      .catch((error) => {
+        toMerge = { error }
+      })
+      .finally(() => {
+        toMerge = { ...toMerge, loading: false }
+
+        setCurrentData((state) => ({ ...state, ...toMerge }))
+      })
 
     return () => controller.abort()
   }, [selectedId])

@@ -47,9 +47,32 @@ export const useItem = () => {
    * @param id Item ID or file name
    */
   const setItem = useCallback(
-    (id: string) => router.push({ hash: id }, undefined, { shallow: true }),
+    (id: string) =>
+      router.push({ pathname: '/', hash: id }, undefined, { shallow: true }),
     [router]
   )
 
   return { setItem }
+}
+
+/**
+ * Hook for setting search query
+ * @returns Function for setting search query
+ */
+export const useSearch = () => {
+  const router = useRouter()
+
+  /**
+   * Set search query
+   * @param query Search query
+   */
+  const setQuery = useCallback(
+    (query: string) =>
+      router.push({ pathname: '/', query: { q: query } }, undefined, {
+        shallow: true,
+      }),
+    [router]
+  )
+
+  return { setQuery }
 }

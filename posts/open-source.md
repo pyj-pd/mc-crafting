@@ -6,7 +6,6 @@ Many open-source projects were used making this website. These are the list:
 - [hangul-js](https://www.npmjs.com/package/hangul-js) for Hangul tools
 - [minecraft-textures](https://www.npmjs.com/package/minecraft-textures) for Minecraft item textures
 - [next](https://www.npmjs.com/package/next) and [react](https://www.npmjs.com/package/react) for magic
-- [@next/font](https://www.npmjs.com/package/@next/font) for font optimization
 - [react-markdown](https://www.npmjs.com/package/react-markdown) for **_this_**
 - [styled-components](https://www.npmjs.com/package/styled-components) for styling
 - [Vitest](https://www.npmjs.com/package/vitest) for testing

@@ -1,4 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next'
+import { DEFAULT_STATUS_CODE } from 'types/api'
 import { InfoApiArgs, InfoApiResponse, runInfoApi } from 'utils/api/info'
 
 const handler = async (
@@ -7,9 +8,12 @@ const handler = async (
 ) => {
   const { file, id } = req.query as InfoApiArgs
 
-  const response = await runInfoApi({ file, id })
+  const { statusCode = DEFAULT_STATUS_CODE, ...response } = await runInfoApi({
+    file,
+    id,
+  })
 
-  res.json(response)
+  res.status(statusCode).json(response)
 }
 
 export default handler

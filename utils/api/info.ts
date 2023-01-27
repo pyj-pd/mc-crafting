@@ -25,6 +25,7 @@ export const runInfoApi: ApiFunction<InfoApiResponse, InfoApiArgs> = async ({
     return {
       data: null,
       errorMessage: apiResponse.invalidParameter,
+      statusCode: 400,
     }
 
   const rawData = await getRecipeData({ file, id }).catch(() => null)
@@ -33,6 +34,7 @@ export const runInfoApi: ApiFunction<InfoApiResponse, InfoApiArgs> = async ({
     return {
       data: null,
       errorMessage: apiResponse.couldNotFindItem,
+      statusCode: 400,
     }
 
   const data = await convertRecipeData(rawData)
