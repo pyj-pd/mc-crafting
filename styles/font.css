@@ -1,0 +1,16 @@
+/* Pretendard */
+@font-face {
+  font-family: 'Pretendard';
+  src: url('/assets/font/PretendardVariable.woff2');
+}
+
+/* Minecraft font */
+@font-face {
+  font-family: 'Minecraft';
+  src: url('/assets/font/Minecraft.otf') format('opentype');
+}
+@font-face {
+  font-family: 'Minecraft';
+  font-weight: bold;
+  src: url('/assets/font/Minecraft-Bold.otf') format('opentype');
+}

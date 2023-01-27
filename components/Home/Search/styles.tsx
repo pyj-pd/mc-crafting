@@ -32,20 +32,21 @@ export const Title = styled(Link)`
   }
 `
 
-export const Form = styled.form`
+export const FormContainer = styled.div`
   position: relative;
 
   display: grid;
   gap: 10px;
-  place-items: stretch;
   grid-template-rows: auto auto;
 
   width: 100%;
   max-width: var(--fixed-width);
 `
 
-export const ButtonContainer = styled.div`
+export const Form = styled.form`
   display: grid;
   gap: 10px;
   grid-template-columns: 1fr auto;
+
+  width: 100%;
 `

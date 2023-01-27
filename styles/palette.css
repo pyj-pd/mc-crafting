@@ -1,4 +1,6 @@
 :root {
+  --f-pretendard: 'Pretendard';
+  --f-minecraft: 'Minecraft';
   --font-family: var(--f-pretendard), -apple-system, BlinkMacSystemFont,
     Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
     Helvetica Neue, sans-serif;

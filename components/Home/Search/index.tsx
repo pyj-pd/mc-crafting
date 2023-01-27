@@ -8,33 +8,30 @@ import {
   useEffect,
 } from 'react'
 import SearchResult from './SearchResult'
-import {
-  ButtonContainer,
-  Form,
-  Container,
-  Title,
-  TitleContainer,
-} from './styles'
-import { SearchContext } from 'contexts/SearchContext'
+import { Form, Container, Title, TitleContainer, FormContainer } from './styles'
+import { SearchContext, useSearch } from 'contexts/SearchContext'
 import SelectLanguage from './SelectLanguage'
 
 const Search = () => {
   const {
-    searchQuery: { setState },
+    searchQuery: { state: searchQuery },
     selected: { state: selectedId },
   } = useContext(SearchContext)
 
+  const { setQuery } = useSearch()
+
   const inputRef = useRef<HTMLInputElement>(null)
 
-  const submitHandler = (e: FormEvent<HTMLFormElement>) => {
+  const onSearch = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
-    setState(inputRef.current?.value ?? '')
+    const query = inputRef.current?.value
+    if (query) setQuery(query)
   }
 
-  const [resultHidden, setResultHidden] = useState(false)
+  const [resultHidden, setResultHidden] = useState(true)
 
-  const onBlur = (e: FocusEvent<HTMLFormElement>) => {
+  const onBlur = (e: FocusEvent<HTMLDivElement>) => {
     if (!e.currentTarget.contains(e.relatedTarget)) setResultHidden(true)
   }
 
@@ -46,21 +43,21 @@ const Search = () => {
         <Title href="/">Crafting Recipe</Title>
         <SelectLanguage />
       </TitleContainer>
-      <Form
-        onSubmit={submitHandler}
+      <FormContainer
         onFocus={() => setResultHidden(false)}
         onBlur={onBlur}
       >
-        <ButtonContainer>
+        <Form onSubmit={onSearch}>
           <Input
             type="search"
             placeholder="Item Name"
+            defaultValue={searchQuery}
             ref={inputRef}
           />
           <Button type="submit">Search</Button>
-        </ButtonContainer>
+        </Form>
         <SearchResult hidden={resultHidden} />
-      </Form>
+      </FormContainer>
     </Container>
   )
 }

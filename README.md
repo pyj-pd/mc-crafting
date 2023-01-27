@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This website is made to search through crafting recipes of various items.
+This website is made to search for crafting recipes of various items.
 TypeScript and Next.js is used.
 
 ## Install
@@ -29,7 +29,7 @@ You will find two folders: `data/recipes` and `data/tags`. Copy these into the p
 
 ## To-do
 
-- [ ] Add testing
+- [x] Add testing
 - [ ] Add more decorations
 - [ ] Add favicon
 - [ ] Add open graph data

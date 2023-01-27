@@ -1,9 +1,5 @@
 @import './palette.css';
-@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css');
-
-:root {
-  --f-pretendard: 'Pretendard';
-}
+@import './font.css';
 
 html,
 body {
