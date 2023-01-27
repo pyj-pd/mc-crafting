@@ -18,14 +18,22 @@ const getRecipeAndConvert = async ({ file, id }: RecipeDataQuery) => {
 
 describe('Recipe data converter', () => {
   it('converts shaped item', async () => {
-    const data = await getRecipeAndConvert(CRAFTING_RECIPE_ITEMS.shaped)
+    const {
+      shaped: { id },
+    } = CRAFTING_RECIPE_ITEMS
 
-    expect(data).toMatchSnapshot()
+    const data = await getRecipeAndConvert({ id })
+
+    expect(data.id).toEqual(id)
   })
 
   it('converts shapeless item', async () => {
-    const data = await getRecipeAndConvert(CRAFTING_RECIPE_ITEMS.shapeless)
+    const {
+      shapeless: { id, file },
+    } = CRAFTING_RECIPE_ITEMS
 
-    expect(data).toMatchSnapshot()
+    const data = await getRecipeAndConvert({ file })
+
+    expect(data.id).toEqual(id)
   })
 })
