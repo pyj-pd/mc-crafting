@@ -11,8 +11,8 @@
   },
   "dependencies": {
     "@next/font": "^13.1.5",
-    "axios": "^1.2.4",
-    "framer-motion": "^8.5.2",
+    "axios": "^1.2.5",
+    "framer-motion": "^8.5.3",
     "fuse.js": "^6.6.2",
     "hangul-js": "^0.2.6",
     "minecraft-textures": "^1.19.0",
@@ -23,7 +23,7 @@
     "react-markdown": "^8.0.5",
     "remark-gfm": "^3.0.1",
     "styled-components": "^5.3.6",
-    "swr": "^2.0.1"
+    "swr": "^2.0.2"
   },
   "devDependencies": {
     "@types/node": "^18.11.18",

@@ -74,7 +74,7 @@ const MOEUM: KeyType = {
  */
 export const hangulToEnglish = (text: string) => {
   const disassembled = hangul.d(text)
-  const converted: string[] = disassembled.map((t) => JAUM[t] ?? MOEUM[t] ?? '')
+  const converted: string[] = disassembled.map((t) => JAUM[t] ?? MOEUM[t] ?? t)
 
   const result = converted.join('')
   return result

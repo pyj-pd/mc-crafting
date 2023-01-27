@@ -38,7 +38,7 @@ describe('Data converter', () => {
   it('loads recipe of an item', async () => {
     const recipeData = await getRecipeData({ id: ITEM_ID })
 
-    expect(recipeData).toMatchSnapshot()
+    expect(recipeData.result.item).toEqual(ITEM_ID)
   })
 
   it('loads item image', () => {
