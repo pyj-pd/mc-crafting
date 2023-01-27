@@ -1,12 +1,6 @@
 name: Test Code
 
-on:
-  push:
-    branches-ignore:
-      - main
-  pull_request:
-    branches:
-      - '**'
+on: [pull_request, push]
 
 jobs:
   build:
