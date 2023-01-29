@@ -1,4 +1,4 @@
-import { Container } from '@/components/Home/styles'
+import { Container, VersionText } from '@/components/Home/styles'
 import { useEffect, useMemo, useState } from 'react'
 import Search from '@/components/Home/Search'
 import { DataState, SearchContext, SelectedItem } from 'contexts/SearchContext'
@@ -12,6 +12,7 @@ import { getLanguageList } from 'utils/language'
 import { useRouter } from 'next/router'
 import { InfoApiResponse } from 'utils/api/info'
 import axios, { AxiosError } from 'axios'
+import { MINECRAFT_VERSION } from 'value/data'
 
 interface CurrentData {
   data: InfoApiResponse | null
@@ -135,6 +136,7 @@ const Home = ({ languages, currentLang }: HomeProps) => {
       <Container>
         <Search />
         <Table data={currentData?.data?.data ?? null} />
+        <VersionText>Using version {MINECRAFT_VERSION}</VersionText>
       </Container>
     </SearchContext.Provider>
   )

@@ -16,5 +16,11 @@ export const Container = styled.main`
   gap: 30px;
   justify-items: center;
   align-content: start;
-  grid-template-rows: auto auto;
+  grid-template-rows: auto auto auto;
+`
+
+export const VersionText = styled.span`
+  display: block;
+
+  color: rgb(var(--c-darker-gray));
 `
