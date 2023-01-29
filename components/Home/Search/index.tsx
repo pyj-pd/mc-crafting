@@ -22,14 +22,17 @@ const Search = () => {
 
   const inputRef = useRef<HTMLInputElement>(null)
 
+  const [resultHidden, setResultHidden] = useState(true)
+
   const onSearch = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
     const query = inputRef.current?.value
-    if (query) setQuery(query)
+    if (query) {
+      setResultHidden(false)
+      setQuery(query)
+    }
   }
-
-  const [resultHidden, setResultHidden] = useState(true)
 
   const onBlur = (e: FocusEvent<HTMLDivElement>) => {
     if (!e.currentTarget.contains(e.relatedTarget)) setResultHidden(true)
