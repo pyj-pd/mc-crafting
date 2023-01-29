@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { useContext, useEffect, useMemo, useState } from 'react'
+import { KeyboardEvent, useContext, useEffect, useMemo, useState } from 'react'
 import { TextureContext } from '../..'
 import { Input, InputImageContainer } from '../../styles'
 import { getItemIdString } from 'utils/string'
@@ -91,15 +91,20 @@ const InputImage = ({
 
   const empty = ids.length < 1
 
+  const onKeyUp = (e: KeyboardEvent<HTMLButtonElement>) => {
+    if (e.key === 'Enter') onClick(ids[0], index, true)
+  }
+
   return (
     <Input
       key={index}
       type="button"
       $empty={empty}
       tabIndex={empty ? -1 : 0}
-      onClick={() => onClick(ids[0], index)}
+      onMouseUp={() => onClick(ids[0], index)}
       onFocus={() => onFocus(index)}
       onBlur={() => onBlur(index)}
+      onKeyUp={onKeyUp}
     >
       {ids && (
         <Tooltip

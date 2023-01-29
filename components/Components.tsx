@@ -57,5 +57,5 @@ export const mainStyles = css`
   width: 100%;
   min-height: 900px;
 
-  padding: 50px 30px;
+  padding: 50px 10px;
 `

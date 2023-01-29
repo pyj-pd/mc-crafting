@@ -16,8 +16,8 @@ const InputItem = () => {
 
   const events = useMemo(
     () => ({
-      onClick: (id: string, index: number) => {
-        if (hoverIndex[index] > 0) setItem(id)
+      onClick: (id: string, index: number, instant = false) => {
+        if (hoverIndex[index] > 0 || instant) setItem(id)
         else
           setHoverIndex((state) => {
             const result = { ...state }
