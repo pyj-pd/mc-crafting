@@ -30,6 +30,7 @@ You will find two folders: `data/recipes` and `data/tags`. Copy these into the p
 ## To-do
 
 - [x] Add testing
+- [x] Add open graph data
 - [ ] Add more decorations
 - [ ] Add favicon
-- [ ] Add open graph data
+- [ ] Add PWA support
