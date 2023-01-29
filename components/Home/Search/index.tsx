@@ -50,9 +50,10 @@ const Search = () => {
         <Form onSubmit={onSearch}>
           <Input
             type="search"
-            placeholder="Item Name"
+            placeholder="Search"
             defaultValue={searchQuery}
             ref={inputRef}
+            autoFocus
           />
           <Button type="submit">Search</Button>
         </Form>

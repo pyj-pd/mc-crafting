@@ -13,31 +13,7 @@ import textures from 'minecraft-textures/dist/textures/1.19'
 import { getTranslation } from './language'
 import { DEFAULT_LANGUAGE_CODE } from 'value/language'
 import { craftingShapedId, craftingShapelessId } from 'value/recipe-data'
-import hangul from 'hangul-js'
-import { hangulToEnglish } from './hangul'
-
-/**
- * Disassemble Korean characters and make it one string
- * @param text Text to disassemble
- * @returns Disassembled text in string
- */
-export const disassembleHangul = (text: string): string =>
-  hangul.d(text).join('')
-
-/**
- * Convert Korean characters into English
- * @param text Text to convert
- * @returns Converted text
- */
-export const koreanToEnglish = (text: string): string => hangulToEnglish(text)
-
-/**
- * Convert text to work well with searching
- * @param text Text to convert
- * @returns Converted text
- */
-export const textToSearch = (text: string): string =>
-  koreanToEnglish(disassembleHangul(text))
+import { textToSearch } from './string'
 
 const pureIdRegex = new RegExp(`^${minecraftPrefix}`)
 

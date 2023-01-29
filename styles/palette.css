@@ -15,7 +15,7 @@
   --c-blue: 47, 113, 255;
   --c-orange: 255, 183, 48;
 
-  --c-inventory-hover-background-color: rgba(255, 255, 255, 0.5);
+  --c-inventory-hover-background-color: rgba(255, 255, 255, 0.3);
 
   --background-color: var(--c-white);
   --text-color: var(--c-black);
@@ -28,6 +28,7 @@
   --z-alerts: 15;
   --z-search-result: 5;
   --z-navbar: 10;
+  --z-tooltip: 3;
 }
 
 @media (prefers-color-scheme: dark) {

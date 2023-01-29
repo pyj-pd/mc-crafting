@@ -1,8 +1,8 @@
 import { ReactNode, createContext, useEffect, useState } from 'react'
 
-export type SpinnerContext = number
+export type SpinnerContextData = number
 
-export const initialValue: SpinnerContext = 1
+export const initialValue: SpinnerContextData = 1
 
 export const SpinnerContext = createContext(initialValue)
 

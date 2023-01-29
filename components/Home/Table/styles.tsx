@@ -39,6 +39,8 @@ export const Container = styled.section`
 `
 
 export const TableContainer = styled.div`
+  position: relative;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -56,7 +58,6 @@ export const TableContainer = styled.div`
   image-rendering: pixelated;
 
   font-family: var(--f-minecraft), var(--font-family);
-  letter-spacing: -0.07em;
 `
 
 export const TextContainer = styled.div`
@@ -86,6 +87,8 @@ interface InputProps {
 }
 
 export const Input = styled.button<InputProps>`
+  position: relative;
+
   display: grid;
   place-items: center;
 
@@ -138,6 +141,8 @@ export const OutputImageContainer = styled.div`
 
   width: ${OUTPUT_IMAGE_WIDTH}%;
   aspect-ratio: 1 / 1;
+
+  cursor: pointer;
 `
 
 export const OutputCount = styled.span`

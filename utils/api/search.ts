@@ -1,7 +1,8 @@
 import Fuse from 'fuse.js'
 import { ApiFunction, ApiResponse } from 'types/api'
 import { ItemNamePair } from 'types/recipe-data'
-import { getItemList, textToSearch } from 'utils/converter'
+import { getItemList } from 'utils/converter'
+import { textToSearch } from 'utils/string'
 import { apiResponse } from 'value/messages'
 
 export const MAX_SEARCH_RESULT = 8
