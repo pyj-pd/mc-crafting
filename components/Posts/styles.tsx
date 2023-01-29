@@ -1,15 +1,13 @@
 import styled from 'styled-components'
 import { mainStyles } from '../Components'
 
-export const Container = styled.div`
+export const Container = styled.main`
   ${mainStyles};
 
   display: grid;
   gap: 20px;
   grid-template-rows: auto 1fr;
   justify-items: center;
-
-  width: 100%;
 `
 
 export const Title = styled.h5`

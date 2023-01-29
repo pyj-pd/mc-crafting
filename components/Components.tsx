@@ -14,6 +14,8 @@ export const inputStyles = css`
 
   width: 100%;
 
+  font-size: inherit;
+
   &:focus {
     outline: solid var(--input-outline-width) rgba(var(--c-black), 0.5);
   }
