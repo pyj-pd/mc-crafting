@@ -1,7 +1,7 @@
 <OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/"
                        xmlns:moz="http://www.mozilla.org/2006/browser/search/">
-  <ShortName>Crafting Recipe</ShortName>
+  <ShortName>MC Crafting</ShortName>
   <Description>Search for crafting recipes of Minecraft items.</Description>
   <InputEncoding>UTF-8</InputEncoding>
-  <Url type="text/html" template="https://minecraft-crafting-recipe.vercel.app/?q={searchTerms}"/>
+  <Url type="text/html" template="https://mc-crafting.vercel.app/?q={searchTerms}"/>
 </OpenSearchDescription>
