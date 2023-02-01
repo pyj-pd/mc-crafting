@@ -1,4 +1,4 @@
-# Minecraft Crafting Recipe
+# MC Crafting
 
 ## Introduction
 
