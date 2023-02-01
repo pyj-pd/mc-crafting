@@ -13,3 +13,5 @@ Many open-source projects were used making this website. These are the list:
 - [Minecraft-Font](https://github.com/IdreesInc/Minecraft-Font) for Minecraft font
 - [Pretendard](https://github.com/orioncactus/pretendard/) for UI font
 - ... and many others
+
+This website is also an open-source project. [Check out on GitHub](https://github.com/pyj-pd/mc-crafting).
