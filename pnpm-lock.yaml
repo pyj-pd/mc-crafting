@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   axios:
-    specifier: ^1.2.5
-    version: 1.2.5
+    specifier: ^1.6.0
+    version: 1.6.0
   framer-motion:
     specifier: ^8.5.3
     version: 8.5.3(react-dom@18.2.0)(react@18.2.0)
@@ -1140,8 +1140,8 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  /axios@1.2.5:
-    resolution: {integrity: sha512-9pU/8mmjSSOb4CXVsvGIevN+MlO/t9OWtKadTaLuN85Gge3HGorUckgp8A/2FH4V4hJ7JuQ3LIeI7KAV9ITZrQ==}
+  /axios@1.6.0:
+    resolution: {integrity: sha512-EZ1DYihju9pwVB+jg67ogm+Tmqc6JmhamRN6I4Zt8DfZu5lbcQGw3ozH9lFejSJgs/ibaef3A9PMXPLeefFGJg==}
     dependencies:
       follow-redirects: 1.15.2
       form-data: 4.0.0
